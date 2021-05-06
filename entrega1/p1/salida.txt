@@ -1,0 +1,319 @@
+[1611920930.735759539] Medico 1 solicita quirofano para operacion (paciente 0)
+[1611920930.735765514] Medico 4 solicita quirofano para operacion (paciente 0)
+[1611920930.735826971] Medico 0 solicita quirofano para operacion (paciente 0)
+[1611920930.735820314] Medico 2 solicita quirofano para operacion (paciente 0)
+[1611920930.735839863] Medico 3 solicita quirofano para operacion (paciente 0)
+[1611920930.735846389] Medico 5 solicita quirofano para operacion (paciente 0)
+[1611920930.736490622] Coordinador de Reserva de Quirofanos busca quirofano para medico 0
+[1611920930.736751606] Coordinador de Reserva de Quirofanos concede quirofano 0 al medico 0
+[1611920930.736648406] Medico 6 solicita quirofano para operacion (paciente 0)
+[1611920930.736995890] Coordinador de Reserva de Quirofanos busca quirofano para medico 2
+[1611920930.737009161] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 2
+[1611920930.737043477] Coordinador de Reserva de Quirofanos busca quirofano para medico 5
+[1611920930.737051716] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 5
+[1611920930.737059203] Coordinador de Reserva de Quirofanos busca quirofano para medico 1
+[1611920930.737064164] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 1
+[1611920930.737073120] Coordinador de Reserva de Quirofanos busca quirofano para medico 4
+[1611920930.737095726] Coordinador de Equipos de Enfermeria busca equipo para medico 2
+[1611920930.737191384] Coordinador de Equipos de Enfermeria concede equipo 0 al medico 2
+[1611920930.737271399] Coordinador de Equipos de Enfermeria busca equipo para medico 1
+[1611920930.737280925] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 1
+[1611920930.737289296] Coordinador de Equipos de Enfermeria busca equipo para medico 0
+[1611920930.737294290] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 0
+[1611920930.737306898] Coordinador de Equipos de Enfermeria busca equipo para medico 5
+[1611920930.737312092] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 5
+[1611920930.737385837] Medico 2 usa el quirofano 0 durante 2.183149s (paciente 0)
+[1611920930.737408067] Medico 5 usa el quirofano 3 durante 3.349298s (paciente 0)
+[1611920930.737417959] Medico 0 usa el quirofano 2 durante 3.395320s (paciente 0)
+[1611920930.737424852] Medico 1 usa el quirofano 1 durante 3.520563s (paciente 0)
+[1611920930.737257974] Medico 7 solicita quirofano para operacion (paciente 0)
+[1611920930.737353272] Medico 8 solicita quirofano para operacion (paciente 0)
+[1611920930.737839895] Medico 9 solicita quirofano para operacion (paciente 0)
+[1611920932.737520693] Medico 2 libera el quirofano 0 tras operacion (paciente 0)
+[1611920932.737567766] Medico 2 solicita quirofano para operacion (paciente 1)
+[1611920932.737609601] Coordinador de Liberacion de Quirofanos libera el quirofano  0 y el equipo 0
+[1611920932.737763163] Coordinador de Reserva de Quirofanos concede quirofano 0 al medico 4
+[1611920932.737792852] Coordinador de Reserva de Quirofanos busca quirofano para medico 3
+[1611920932.737817670] Coordinador de Equipos de Enfermeria busca equipo para medico 4
+[1611920932.737825458] Coordinador de Equipos de Enfermeria concede equipo 0 al medico 4
+[1611920932.737842708] Medico 4 usa el quirofano 0 durante 3.734942s (paciente 0)
+[1611920933.800618245] Medico 1 libera el quirofano 1 tras operacion (paciente 0)
+[1611920933.800682766] Medico 1 solicita quirofano para operacion (paciente 1)
+[1611920933.800673781] Medico 5 libera el quirofano 3 tras operacion (paciente 0)
+[1611920933.800824087] Medico 5 solicita quirofano para operacion (paciente 1)
+[1611920933.800852768] Medico 0 libera el quirofano 2 tras operacion (paciente 0)
+[1611920933.800865174] Medico 0 solicita quirofano para operacion (paciente 1)
+[1611920933.800889124] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 1
+[1611920933.800900931] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 2
+[1611920933.800910535] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 3
+[1611920933.800946176] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 3
+[1611920933.800994644] Coordinador de Reserva de Quirofanos busca quirofano para medico 6
+[1611920933.801004766] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 6
+[1611920933.801027394] Coordinador de Reserva de Quirofanos busca quirofano para medico 7
+[1611920933.801035860] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 7
+[1611920933.801058472] Coordinador de Reserva de Quirofanos busca quirofano para medico 8
+[1611920933.801189549] Coordinador de Equipos de Enfermeria busca equipo para medico 3
+[1611920933.801217057] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 3
+[1611920933.801250744] Coordinador de Equipos de Enfermeria busca equipo para medico 6
+[1611920933.801260374] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 6
+[1611920933.801271450] Coordinador de Equipos de Enfermeria busca equipo para medico 7
+[1611920933.801279285] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 7
+[1611920933.801360620] Medico 6 usa el quirofano 2 durante 1.592654s (paciente 0)
+[1611920933.801389272] Medico 7 usa el quirofano 3 durante 2.005668s (paciente 0)
+[1611920933.801405701] Medico 3 usa el quirofano 1 durante 3.304689s (paciente 0)
+[1611920934.801425783] Medico 6 libera el quirofano 2 tras operacion (paciente 0)
+[1611920934.801474352] Medico 6 solicita quirofano para operacion (paciente 1)
+[1611920934.801500317] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 1
+[1611920934.801516569] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 8
+[1611920934.801563210] Coordinador de Reserva de Quirofanos busca quirofano para medico 9
+[1611920934.801713364] Coordinador de Equipos de Enfermeria busca equipo para medico 8
+[1611920934.801739905] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 8
+[1611920934.801876751] Medico 8 usa el quirofano 2 durante 1.833324s (paciente 0)
+[1611920935.763708381] Medico 4 libera el quirofano 0 tras operacion (paciente 0)
+[1611920935.763812933] Coordinador de Liberacion de Quirofanos libera el quirofano  0 y el equipo 0
+[1611920935.763830034] Coordinador de Reserva de Quirofanos concede quirofano 0 al medico 9
+[1611920935.763841756] Coordinador de Reserva de Quirofanos busca quirofano para medico 2
+[1611920935.763851641] Medico 4 solicita quirofano para operacion (paciente 1)
+[1611920935.763867592] Coordinador de Equipos de Enfermeria busca equipo para medico 4
+[1611920935.763875006] Coordinador de Equipos de Enfermeria concede equipo 0 al medico 4
+[1611920935.763891017] Medico 4 usa el quirofano 0 durante 2.661910s (paciente 1)
+[1611920935.801922312] Medico 7 libera el quirofano 3 tras operacion (paciente 0)
+[1611920935.801966996] Medico 7 solicita quirofano para operacion (paciente 1)
+[1611920935.801988599] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 2
+[1611920935.802001849] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 2
+[1611920935.802039162] Coordinador de Reserva de Quirofanos busca quirofano para medico 1
+[1611920935.802132963] Medico 8 libera el quirofano 2 tras operacion (paciente 0)
+[1611920935.802149874] Medico 8 solicita quirofano para operacion (paciente 1)
+[1611920935.802157832] Coordinador de Equipos de Enfermeria busca equipo para medico 2
+[1611920935.802184355] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 2
+[1611920935.802165053] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 1
+[1611920935.802261092] Medico 2 usa el quirofano 3 durante 2.432191s (paciente 1)
+[1611920935.802172009] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 1
+[1611920935.802296308] Coordinador de Reserva de Quirofanos busca quirofano para medico 5
+[1611920935.802433470] Coordinador de Equipos de Enfermeria busca equipo para medico 1
+[1611920935.802450574] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 1
+[1611920935.802468512] Medico 1 usa el quirofano 2 durante 2.886613s (paciente 1)
+[1611920936.858102317] Medico 3 libera el quirofano 1 tras operacion (paciente 0)
+[1611920936.858187927] Medico 3 solicita quirofano para operacion (paciente 1)
+[1611920936.858253779] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920936.858270345] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 5
+[1611920936.858304316] Coordinador de Reserva de Quirofanos busca quirofano para medico 0
+[1611920936.858432590] Coordinador de Equipos de Enfermeria busca equipo para medico 5
+[1611920936.858452690] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 5
+[1611920936.858542309] Medico 5 usa el quirofano 1 durante 2.094353s (paciente 1)
+[1611920937.764450267] Medico 4 libera el quirofano 0 tras operacion (paciente 1)
+[1611920937.764534518] Coordinador de Liberacion de Quirofanos libera el quirofano  0 y el equipo 0
+[1611920937.764556207] Medico 4 solicita quirofano para operacion (paciente 2)
+[1611920937.764694476] Coordinador de Reserva de Quirofanos concede quirofano 0 al medico 0
+[1611920937.764766889] Coordinador de Reserva de Quirofanos busca quirofano para medico 6
+[1611920937.764906863] Coordinador de Equipos de Enfermeria busca equipo para medico 0
+[1611920937.764930569] Coordinador de Equipos de Enfermeria concede equipo 0 al medico 0
+[1611920937.765123023] Medico 0 usa el quirofano 0 durante 2.540203s (paciente 1)
+[1611920937.803005887] Medico 1 libera el quirofano 2 tras operacion (paciente 1)
+[1611920937.803056224] Medico 1 solicita quirofano para operacion (paciente 2)
+[1611920937.803078302] Medico 2 libera el quirofano 3 tras operacion (paciente 1)
+[1611920937.803089818] Medico 2 solicita quirofano para operacion (paciente 2)
+[1611920937.803110464] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 2
+[1611920937.803121746] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 1
+[1611920937.803178094] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 6
+[1611920937.803230326] Coordinador de Reserva de Quirofanos busca quirofano para medico 4
+[1611920937.803240454] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 4
+[1611920937.803253316] Coordinador de Reserva de Quirofanos busca quirofano para medico 7
+[1611920937.803376306] Coordinador de Equipos de Enfermeria busca equipo para medico 6
+[1611920937.803399707] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 6
+[1611920937.803431171] Coordinador de Equipos de Enfermeria busca equipo para medico 9
+[1611920937.803440455] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 9
+[1611920937.803591532] Medico 6 usa el quirofano 2 durante 3.856689s (paciente 1)
+[1611920937.803629980] Medico 9 usa el quirofano 3 durante 3.748585s (paciente 0)
+[1611920938.858701397] Medico 5 libera el quirofano 1 tras operacion (paciente 1)
+[1611920938.858726375] Medico 5 solicita quirofano para operacion (paciente 2)
+[1611920938.858736411] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920938.858742770] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 7
+[1611920938.858757469] Coordinador de Reserva de Quirofanos busca quirofano para medico 8
+[1611920938.858766493] Coordinador de Equipos de Enfermeria busca equipo para medico 7
+[1611920938.858775281] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 7
+[1611920938.858859655] Medico 7 usa el quirofano 1 durante 2.907135s (paciente 1)
+[1611920939.766023597] Medico 0 libera el quirofano 0 tras operacion (paciente 1)
+[1611920939.766077222] Medico 0 solicita quirofano para operacion (paciente 2)
+[1611920939.766105215] Coordinador de Liberacion de Quirofanos libera el quirofano  0 y el equipo 0
+[1611920939.766122240] Coordinador de Reserva de Quirofanos concede quirofano 0 al medico 8
+[1611920939.766172102] Coordinador de Reserva de Quirofanos busca quirofano para medico 3
+[1611920939.766340199] Coordinador de Equipos de Enfermeria busca equipo para medico 8
+[1611920939.766364619] Coordinador de Equipos de Enfermeria concede equipo 0 al medico 8
+[1611920939.766578700] Medico 8 usa el quirofano 0 durante 3.151891s (paciente 1)
+[1611920940.804464168] Medico 6 libera el quirofano 2 tras operacion (paciente 1)
+[1611920940.804490741] Medico 6 solicita quirofano para operacion (paciente 2)
+[1611920940.804500041] Medico 9 libera el quirofano 3 tras operacion (paciente 0)
+[1611920940.804505189] Medico 9 solicita quirofano para operacion (paciente 1)
+[1611920940.804515824] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 1
+[1611920940.804521137] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 2
+[1611920940.804528674] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 3
+[1611920940.804535822] Coordinador de Reserva de Quirofanos busca quirofano para medico 4
+[1611920940.804539497] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 4
+[1611920940.804551738] Coordinador de Reserva de Quirofanos busca quirofano para medico 1
+[1611920940.804651806] Coordinador de Equipos de Enfermeria busca equipo para medico 3
+[1611920940.804665991] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 3
+[1611920940.804681356] Coordinador de Equipos de Enfermeria busca equipo para medico 4
+[1611920940.804686799] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 4
+[1611920940.804766296] Medico 4 usa el quirofano 3 durante 1.424808s (paciente 2)
+[1611920940.804778457] Medico 3 usa el quirofano 2 durante 2.820907s (paciente 1)
+[1611920940.859543632] Medico 7 libera el quirofano 1 tras operacion (paciente 1)
+[1611920940.859572913] Medico 7 solicita quirofano para operacion (paciente 2)
+[1611920940.859586911] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920940.859595541] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 1
+[1611920940.859602543] Coordinador de Reserva de Quirofanos busca quirofano para medico 2
+[1611920940.859747292] Coordinador de Equipos de Enfermeria busca equipo para medico 1
+[1611920940.859762073] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 1
+[1611920940.859861723] Medico 1 usa el quirofano 1 durante 1.048902s (paciente 2)
+[1611920941.805009801] Medico 4 libera el quirofano 3 tras operacion (paciente 2)
+[1611920941.805036682] Medico 4 solicita quirofano para operacion (paciente 3)
+[1611920941.805047430] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 1
+[1611920941.805053625] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 2
+[1611920941.805059402] Coordinador de Reserva de Quirofanos busca quirofano para medico 5
+[1611920941.805155167] Coordinador de Equipos de Enfermeria busca equipo para medico 2
+[1611920941.805163531] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 2
+[1611920941.805269669] Medico 2 usa el quirofano 3 durante 1.728660s (paciente 2)
+[1611920941.859938327] Medico 1 libera el quirofano 1 tras operacion (paciente 2)
+[1611920941.859971721] Medico 1 solicita quirofano para operacion (paciente 3)
+[1611920941.859987948] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920941.859997130] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 5
+[1611920941.860005554] Coordinador de Reserva de Quirofanos busca quirofano para medico 0
+[1611920941.860163952] Coordinador de Equipos de Enfermeria busca equipo para medico 5
+[1611920941.860178266] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 5
+[1611920941.860298512] Medico 5 usa el quirofano 1 durante 1.411695s (paciente 2)
+[1611920942.766829690] Medico 8 libera el quirofano 0 tras operacion (paciente 1)
+[1611920942.766872932] Medico 8 solicita quirofano para operacion (paciente 2)
+[1611920942.766895192] Coordinador de Liberacion de Quirofanos libera el quirofano  0 y el equipo 0
+[1611920942.766908248] Coordinador de Reserva de Quirofanos concede quirofano 0 al medico 0
+[1611920942.766919337] Coordinador de Reserva de Quirofanos busca quirofano para medico 6
+[1611920942.767102389] Coordinador de Equipos de Enfermeria busca equipo para medico 0
+[1611920942.767122155] Coordinador de Equipos de Enfermeria concede equipo 0 al medico 0
+[1611920942.767282970] Medico 0 usa el quirofano 0 durante 3.412530s (paciente 2)
+[1611920942.805830904] Medico 3 libera el quirofano 2 tras operacion (paciente 1)
+[1611920942.805873807] Medico 3 solicita quirofano para operacion (paciente 2)
+[1611920942.805891789] Medico 2 libera el quirofano 3 tras operacion (paciente 2)
+[1611920942.805900399] Medico 2 solicita quirofano para operacion (paciente 3)
+[1611920942.805916708] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 2
+[1611920942.805925620] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 1
+[1611920942.805936914] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 6
+[1611920942.805948557] Coordinador de Reserva de Quirofanos busca quirofano para medico 9
+[1611920942.805954824] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 9
+[1611920942.805964755] Coordinador de Reserva de Quirofanos busca quirofano para medico 7
+[1611920942.806048512] Coordinador de Equipos de Enfermeria busca equipo para medico 6
+[1611920942.806068167] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 6
+[1611920942.806093770] Coordinador de Equipos de Enfermeria busca equipo para medico 9
+[1611920942.806100795] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 9
+[1611920942.806245532] Medico 9 usa el quirofano 3 durante 1.470037s (paciente 1)
+[1611920942.806276975] Medico 6 usa el quirofano 2 durante 2.202833s (paciente 2)
+[1611920942.861297464] Medico 5 libera el quirofano 1 tras operacion (paciente 2)
+[1611920942.861350610] Medico 5 solicita quirofano para operacion (paciente 3)
+[1611920942.861377237] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920942.861394505] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 7
+[1611920942.861409068] Coordinador de Reserva de Quirofanos busca quirofano para medico 4
+[1611920942.861611562] Coordinador de Equipos de Enfermeria busca equipo para medico 7
+[1611920942.861645535] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 7
+[1611920942.861801464] Medico 7 usa el quirofano 1 durante 1.389371s (paciente 2)
+[1611920943.806881698] Medico 9 libera el quirofano 3 tras operacion (paciente 1)
+[1611920943.806908842] Medico 9 solicita quirofano para operacion (paciente 2)
+[1611920943.806919557] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 1
+[1611920943.806925620] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 4
+[1611920943.806930929] Coordinador de Reserva de Quirofanos busca quirofano para medico 1
+[1611920943.806988058] Coordinador de Equipos de Enfermeria busca equipo para medico 4
+[1611920943.806996012] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 4
+[1611920943.807041519] Medico 4 usa el quirofano 3 durante 1.326426s (paciente 3)
+[1611920943.864175221] Medico 7 libera el quirofano 1 tras operacion (paciente 2)
+[1611920943.864200257] Medico 7 solicita quirofano para operacion (paciente 3)
+[1611920943.864209524] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920943.864215520] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 1
+[1611920943.864220886] Coordinador de Reserva de Quirofanos busca quirofano para medico 8
+[1611920943.864330973] Coordinador de Equipos de Enfermeria busca equipo para medico 1
+[1611920943.864341681] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 1
+[1611920943.864427413] Medico 1 usa el quirofano 1 durante 3.996774s (paciente 3)
+[1611920944.806675465] Medico 6 libera el quirofano 2 tras operacion (paciente 2)
+[1611920944.806749923] Medico 6 solicita quirofano para operacion (paciente 3)
+[1611920944.806786593] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 2
+[1611920944.806808232] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 8
+[1611920944.806851156] Coordinador de Reserva de Quirofanos busca quirofano para medico 3
+[1611920944.807089754] Coordinador de Equipos de Enfermeria busca equipo para medico 8
+[1611920944.807121625] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 8
+[1611920944.807388315] Medico 4 libera el quirofano 3 tras operacion (paciente 3)
+[1611920944.807591993] Medico 8 usa el quirofano 2 durante 1.654771s (paciente 2)
+[1611920944.807633152] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 1
+[1611920944.807653201] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 3
+[1611920944.807670736] Coordinador de Reserva de Quirofanos busca quirofano para medico 2
+[1611920944.807947574] Coordinador de Equipos de Enfermeria busca equipo para medico 3
+[1611920944.807976825] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 3
+[1611920944.808163370] Medico 3 usa el quirofano 3 durante 2.538797s (paciente 2)
+[1611920945.788756723] Medico 0 libera el quirofano 0 tras operacion (paciente 2)
+[1611920945.788826128] Medico 0 solicita quirofano para operacion (paciente 3)
+[1611920945.788861236] Coordinador de Liberacion de Quirofanos libera el quirofano  0 y el equipo 0
+[1611920945.788882142] Coordinador de Reserva de Quirofanos concede quirofano 0 al medico 2
+[1611920945.788900896] Coordinador de Reserva de Quirofanos busca quirofano para medico 5
+[1611920945.788934005] Coordinador de Equipos de Enfermeria busca equipo para medico 2
+[1611920945.788945420] Coordinador de Equipos de Enfermeria concede equipo 0 al medico 2
+[1611920945.788976245] Medico 2 usa el quirofano 0 durante 3.517337s (paciente 3)
+[1611920945.807742930] Medico 8 libera el quirofano 2 tras operacion (paciente 2)
+[1611920945.807810976] Medico 8 solicita quirofano para operacion (paciente 3)
+[1611920945.807846963] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 2
+[1611920945.807867547] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 5
+[1611920945.807885956] Coordinador de Reserva de Quirofanos busca quirofano para medico 9
+[1611920945.807918047] Coordinador de Equipos de Enfermeria busca equipo para medico 5
+[1611920945.807928990] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 5
+[1611920945.807958907] Medico 5 usa el quirofano 2 durante 2.837919s (paciente 3)
+[1611920946.845499370] Medico 3 libera el quirofano 3 tras operacion (paciente 2)
+[1611920946.847348734] Medico 3 solicita quirofano para operacion (paciente 3)
+[1611920946.847395006] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 1
+[1611920946.847416447] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 9
+[1611920946.847452577] Coordinador de Reserva de Quirofanos busca quirofano para medico 7
+[1611920946.847892227] Coordinador de Equipos de Enfermeria busca equipo para medico 9
+[1611920946.847923543] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 9
+[1611920946.847998601] Medico 9 usa el quirofano 3 durante 1.888095s (paciente 2)
+[1611920946.864728470] Medico 1 libera el quirofano 1 tras operacion (paciente 3)
+[1611920946.864792438] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920946.864802800] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 7
+[1611920946.864811498] Coordinador de Reserva de Quirofanos busca quirofano para medico 6
+[1611920946.864824914] Coordinador de Equipos de Enfermeria busca equipo para medico 7
+[1611920946.864829587] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 7
+[1611920946.865559085] Medico 7 usa el quirofano 1 durante 2.912657s (paciente 3)
+[1611920947.808486057] Medico 5 libera el quirofano 2 tras operacion (paciente 3)
+[1611920947.808580707] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 2
+[1611920947.808597668] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 6
+[1611920947.808610811] Coordinador de Reserva de Quirofanos busca quirofano para medico 0
+[1611920947.808648757] Coordinador de Equipos de Enfermeria busca equipo para medico 6
+[1611920947.808656963] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 6
+[1611920947.808676486] Medico 6 usa el quirofano 2 durante 2.572862s (paciente 3)
+[1611920947.852184788] Medico 9 libera el quirofano 3 tras operacion (paciente 2)
+[1611920947.852253315] Medico 9 solicita quirofano para operacion (paciente 3)
+[1611920947.852289850] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 1
+[1611920947.852310544] Coordinador de Reserva de Quirofanos concede quirofano 3 al medico 0
+[1611920947.852348794] Coordinador de Reserva de Quirofanos busca quirofano para medico 8
+[1611920947.852502325] Coordinador de Equipos de Enfermeria busca equipo para medico 0
+[1611920947.852523501] Coordinador de Equipos de Enfermeria concede equipo 1 al medico 0
+[1611920947.852546217] Medico 0 usa el quirofano 3 durante 2.480749s (paciente 3)
+[1611920948.789636945] Medico 2 libera el quirofano 0 tras operacion (paciente 3)
+[1611920948.789738277] Coordinador de Liberacion de Quirofanos libera el quirofano  0 y el equipo 0
+[1611920948.789756395] Coordinador de Reserva de Quirofanos concede quirofano 0 al medico 8
+[1611920948.789770018] Coordinador de Reserva de Quirofanos busca quirofano para medico 3
+[1611920948.789791611] Coordinador de Equipos de Enfermeria busca equipo para medico 8
+[1611920948.789799040] Coordinador de Equipos de Enfermeria concede equipo 0 al medico 8
+[1611920948.789818188] Medico 8 usa el quirofano 0 durante 3.918325s (paciente 3)
+[1611920948.867052235] Medico 7 libera el quirofano 1 tras operacion (paciente 3)
+[1611920948.867111236] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920948.867120589] Coordinador de Reserva de Quirofanos concede quirofano 1 al medico 3
+[1611920948.867137285] Coordinador de Reserva de Quirofanos busca quirofano para medico 9
+[1611920948.867266649] Coordinador de Equipos de Enfermeria busca equipo para medico 3
+[1611920948.867274350] Coordinador de Equipos de Enfermeria concede equipo 3 al medico 3
+[1611920948.867329163] Medico 3 usa el quirofano 1 durante 1.877550s (paciente 3)
+[1611920949.809905320] Medico 6 libera el quirofano 2 tras operacion (paciente 3)
+[1611920949.809995033] Coordinador de Liberacion de Quirofanos libera el quirofano  2 y el equipo 2
+[1611920949.810012180] Coordinador de Reserva de Quirofanos concede quirofano 2 al medico 9
+[1611920949.810323404] Coordinador de Equipos de Enfermeria busca equipo para medico 9
+[1611920949.810345041] Coordinador de Equipos de Enfermeria concede equipo 2 al medico 9
+[1611920949.810499303] Medico 9 usa el quirofano 2 durante 3.314073s (paciente 3)
+[1611920949.853718741] Medico 0 libera el quirofano 3 tras operacion (paciente 3)
+[1611920949.853817527] Coordinador de Liberacion de Quirofanos libera el quirofano  3 y el equipo 1
+[1611920949.867723153] Medico 3 libera el quirofano 1 tras operacion (paciente 3)
+[1611920949.867888188] Coordinador de Liberacion de Quirofanos libera el quirofano  1 y el equipo 3
+[1611920951.790408827] Medico 8 libera el quirofano 0 tras operacion (paciente 3)
+[1611920951.790512532] Coordinador de Liberacion de Quirofanos libera el quirofano  0 y el equipo 0
+[1611920952.851725234] Medico 9 libera el quirofano 2 tras operacion (paciente 3)
