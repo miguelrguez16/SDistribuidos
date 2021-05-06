@@ -1,0 +1,2 @@
+(cd medico && ./compilar)
+(cd hospital && ./compilar)

@@ -1,0 +1,2 @@
+echo "Compilando Coordinacion del Hospital"
+javac -d ../clases -cp ../clases:../clases/rabbitmq-client.jar Hospital.java EstadoRecursos.java

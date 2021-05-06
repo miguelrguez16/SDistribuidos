@@ -1,0 +1,6 @@
+if [ "$#" -ne 3 ]; then
+    echo "Debe especificarse el máximo número de medicos, de quirofanos y de equipos"
+    exit
+fi
+echo "Lanzando Coordinacion del Hospital"
+java -cp clases:clases/rabbitmq-client.jar -Djava.security.policy=policy coordinacion.Hospital $1 $2 $3
