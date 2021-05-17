@@ -22,7 +22,19 @@ public class Simulador {
     // hay el número adecuado de ellos y que son números enteros
     // Los argumentos han de ser el id_medico y el número de pacientes a operar
     // A RELLENAR
-
+    if(argv.length != 2){
+      System.out.println("Error En el numero de argumentos");
+      exit(1);
+    }
+    else{
+      try {
+        id = Integer.parseInt(argv[0]);
+        num_operaciones = Integer.parseInt(argv[0]);
+      } catch(NumberFormatException e){
+        System.err.println("Error en el formato de los argumentos\nSimulador <id_medico> <num_operaciones>");
+        exit(1)
+      }
+    }
     // =================================================
     // Instanciar SecurityManager necesario para RMI
     if (System.getSecurityManager() == null) {
