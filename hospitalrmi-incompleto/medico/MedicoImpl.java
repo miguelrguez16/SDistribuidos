@@ -34,19 +34,25 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
     }
 
     @Override
-    public void quirofanoConcedido(int quirofano) throws RemoteException {
+    public void quirofanoConcedido(int quirofanu) throws RemoteException {
         // Este método es invocado vía RMI desde la Coordinacion
         // Recibe el quirofano concedido y se limita a guardarlo en la cola interna
         
         // A RELLENAR
+        if(!cola.add(quirofanu)){
+            System.out.println()
+        }
     }
 
     @Override
-    public void equipoConcedido(int equipo) throws RemoteException {
+    public void equipoConcedido(int equipu) throws RemoteException {
         // Este método es invocado vía RMI desde la Coordinacion
         // Recibe el equipo concedido y se limita a guardarlo en la cola interna
 
         // A RELLENAR
+        if(!cola.add(equipu)){
+            System.out.println()
+        }
     }
 
     public int getQuirofano() throws InterruptedException {
@@ -55,6 +61,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         // y retorna su valor
 
         // A RELLENAR
+        return cola.take()
     }
 
     public int getEquipo() throws InterruptedException {
@@ -63,5 +70,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         // y retorna su valor
 
         // A RELLENAR
+        return cola.take()
+
     }
 }

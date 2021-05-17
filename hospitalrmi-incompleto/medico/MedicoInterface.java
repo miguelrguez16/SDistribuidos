@@ -9,4 +9,7 @@ Interfaz remoto del Medico que ha de hacer público los metodos siguientes:
 */
 public interface MedicoInterface extends Remote {
     // A RELLENAR
+
+    public void quirofanoConcedido(int quirofanu) throws java.rmi.RemoteException;
+    public void equipoConcedido(int equipu) throws java.rmi.RemoteException;
 }
