@@ -1,2 +1,8 @@
 # A RELLENAR
-echo "A RELLENAR"
+if [ "$#" -ne 2 ]; then
+    echo "Debe especificarse el id del medicos y el número de pacientes del médico"
+    exit
+fi
+
+ ./lanzar_medico $1 $2 &
+#echo "Se lanza médico con $1 y $2"
