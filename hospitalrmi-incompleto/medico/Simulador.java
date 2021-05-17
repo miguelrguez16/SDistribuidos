@@ -24,33 +24,32 @@ public class Simulador {
     // A RELLENAR
     if(argv.length != 2){
       System.out.println("Error En el numero de argumentos");
-      exit(1);
+      System.exit(1);
     }
     else{
-      try {
-        id = Integer.parseInt(argv[0]);
-        num_operaciones = Integer.parseInt(argv[0]);
-      } catch(NumberFormatException e){
-        System.err.println("Error en el formato de los argumentos\nSimulador <id_medico> <num_operaciones>");
-        exit(1)
-      }
+        id = argv[0];
+        num_operaciones = argv[1];
     }
     // =================================================
     // Instanciar SecurityManager necesario para RMI
     if (System.getSecurityManager() == null) {
       System.setSecurityManager(new SecurityManager());
     }
-
+    String nome = "Medico_" + id_medico;
     // =================================================
     // Parte principal, toda dentro de un try para capturar cualquier excepción
     try {
       // Arrancar el servidor RMI MedicoImpl y registrarlo en rmiregistry
       // dandole como nombre "Medico_id", según su id
       // A RELLENAR
-
+      MedicoImpl medicu = new MedicoImpl();
+      Naming.rebind(nome);
       // Conectar con Rabbit para poder enviar peticiones a la cola
       // A RELLENAR
-
+      ConnectionFactory factory = new ConnectionFactory();
+      factory.setHost("localhost");
+      Connection connection = factory.newConnection();
+      Channel channel = connection.createChannel();
       // Realizar la simulación
       simular_operaciones(num_pacientes, channel, id, medico);
 

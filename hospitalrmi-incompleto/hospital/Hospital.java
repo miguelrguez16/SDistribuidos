@@ -106,6 +106,7 @@ class Coordinacion extends Thread {
 			            tmp = Integer.parseInt(mensaje[0]);
 		            }catch (NumberFormatException e) {
 			            System.err.println(e.getMessage());
+                        System.exit(1);
 		            }
                     if (tmp!=-1){ 
                         switch (mensaje[0]){
@@ -135,6 +136,7 @@ class Coordinacion extends Thread {
                                 break;
                             default:
                                 System.err.println("Error en peticion Hospital \n(tipo de mensaje erroneo) "+ solicitud);
+                                System.exit(1);
                         }
                     }else{
                         System.err.println("Error peticion hospital \n(formato número erroneo) "+ solicitud);
