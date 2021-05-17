@@ -318,6 +318,15 @@ public class Hospital {
         // y max_pistas) emitiendo un error si falta alguno no si no son de tipo numérico
         // A RELLENAR
 
+        if(argv==3){
+            max_quirofanos = argv[0];
+            max_equipos = argv[1];
+            max_medicos = argv[2];
+        }else{
+            System.out.println("Error: Número de argumentos\nUso: hospital <max_quirofanos> <max_equipos> <max_medicos>");
+            System.exit(1);
+        }
+
         // Primero se crean las colas internas de sincronización entre hilos
         ArrayBlockingQueue<Integer> cola_solicitar_q =  new ArrayBlockingQueue<Integer>(max_medicos);
         ArrayBlockingQueue<Integer> cola_liberar_q = new ArrayBlockingQueue<Integer>(max_medicos);

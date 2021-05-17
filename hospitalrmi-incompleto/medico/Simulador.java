@@ -50,6 +50,8 @@ public class Simulador {
       factory.setHost("localhost");
       Connection connection = factory.newConnection();
       Channel channel = connection.createChannel();
+      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
+
       // Realizar la simulación
       simular_operaciones(num_pacientes, channel, id, medico);
 
@@ -96,7 +98,11 @@ public class Simulador {
 
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-
+      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      String mensaxe = "SQ " + id;     
+      channel.basicPublish("", QUEUE_NAME, null, mensaxe.getBytes());
+      //depuracion
+      System.out.println(" [x] Sent '" + mensaxe + "'");
 
       // Esperar por el quirofano concedido
       quirofano = medico.getQuirofano();
@@ -107,6 +113,10 @@ public class Simulador {
 
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
+      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      mensaxe = "SE " + id;     
+      channel.basicPublish("", QUEUE_NAME, null, mensaxe.getBytes());
+      System.out.println(" [x] Sent '" + mensaxe + "'");
 
       // Esperar por el quirofano concedido
       equipo = medico.getEquipo();
@@ -121,7 +131,10 @@ public class Simulador {
       // Notificar liberación del quirofano
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-      
+      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      mensaxe = "LQ " + quirofano;     
+      channel.basicPublish("", QUEUE_NAME, null, mensaxe.getBytes());
+      System.out.println(" [x] Sent '" + mensaxe + "'");
       // No hay que esperar ninguna notificación tras liberar
 
       System.out.println(String.format("Medico %d libera equipo %d tras operar (paciente %d)",  id, equipo, paciente));
@@ -129,7 +142,10 @@ public class Simulador {
       // Notificar liberación del equipo
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-
+      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      mensaxe = "LE " + equipo;     
+      channel.basicPublish("", QUEUE_NAME, null, mensaxe.getBytes());
+      System.out.println(" [x] Sent '" + mensaxe + "'");
       // No hay que esperar ninguna notificación tras liberar
     } // Volver al bucle a simular otra operacion
 
