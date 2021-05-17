@@ -41,10 +41,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 // bloqueantes las solicitudes para que sean atendidas en los hilos Gestores
 class Coordinacion extends Thread {
     private final static String NOMBRE_COLA_RABBIT = "solicitar_recurso";
-    private ArrayBlockingQueue<Integer> cola_solicitar_q;
-    private ArrayBlockingQueue<Integer> cola_liberar_q;
-    private ArrayBlockingQueue<Integer> cola_solicitar_e;
-    private ArrayBlockingQueue<Integer> cola_liberar_e;
+    private ArrayBlockingQueue<Integer> cola_solicitar_q; //solicitar quirofano
+    private ArrayBlockingQueue<Integer> cola_liberar_q;   //liberar quirofano
+    private ArrayBlockingQueue<Integer> cola_solicitar_e; //solicitar equipo
+    private ArrayBlockingQueue<Integer> cola_liberar_e;  //liberar equipo
 
     // El constructor recibe las colas bloqueantes que le permiten comunicarse
     // con los otros hilos
@@ -99,6 +99,48 @@ class Coordinacion extends Thread {
                     // En otro caso ignorar el mensaje (se puede emitir un WARNING por la salida estándar)
 
                     // A RELLENAR
+                    //dividimos el mensaje
+                    String mensaje[] = solicitud.split(" ");
+                    int tmp = -1; //variable para alojar el id de medico, quirofano o equipo
+		            try {
+			            tmp = Integer.parseInt(mensaje[0]);
+		            }catch (NumberFormatException e) {
+			            System.err.println(e.getMessage());
+		            }
+                    if (tmp!=-1){ 
+                        switch (mensaje[0]){
+                            case "SQ": //solicitud de quirofano
+                                // enviar el número de médico a GestorReservaEquipo
+                                if(!this.cola_solicitar_q.add(tmp)){ //si devuelve false no inserto en la cosa
+                                    System.err.println("Error insertar cola SF: " + tmp);
+                                }
+                                break;
+                            case "SE": //solicitud de equipo de enfermería
+                                // enviar el número de médico a GestorReservaEquipo
+                                if(!this.cola_solicitar_e.add(tmp)){//si devuelve false no inserto en la cosa
+                                    System.err.println("Error insertar cola SE: " + tmp);
+                                }
+                                break;
+                            case "LQ": //solicitud de equipo de enfermería
+                                // enviar el número de médico a GestorReservaEquipo
+                                if(!this.cola_liberar_q.add(tmp)){//si devuelve false no inserto en la cosa
+                                    System.err.println("Error insertar cola LQ: " + tmp);
+                                }
+                                break;
+                            case "LE": //solicitud de equipo de enfermería
+                                // enviar el número del equipo a GestorReservaEquipo
+                                if(!this.cola_liberar_e.add(tmp)){//si devuelve false no inserto en la cosa
+                                    System.err.println("Error insertar cola LQ: " + tmp);
+                                }
+                                break;
+                            default:
+                                System.err.println("Error en peticion Hospital \n(tipo de mensaje erroneo) "+ solicitud);
+                        }
+                    }else{
+                        System.err.println("Error peticion hospital \n(formato número erroneo) "+ solicitud);
+                    }
+                    
+
                 }
             };
             System.out.println("Coordinacion del hospital. Esperando solicitudes de recursos");
@@ -130,16 +172,23 @@ class GestorReservaQuirofano extends Thread {
             while (true) {  // Bucle infinito
                 // Esperar solicitud del Coordinador en la cola bloqueante
                 // A RELLENAR
-
+                int idMedico = null;
+                while(idMedico==null){
+                    idMedico = cola.take();
+                }
                 // Obtener quirofano libre de EstadoRecursos. Esta llamada es bloqueante
                 // y no se prosigue hasta que haya quirofano libre.
                 // A RELLENAR
-
+                int quirofano = estado_quirofanos.buscar_recurso("");
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
+                String name = "Medico_" + idMedico;
+                MedicoImpl medicu = (MedicoImpl) Naming.lookup(name);
                 // y luego se invoca su método quirofanoConcedido()
+                
                 try {
                     // A RELLENAR
+                    medicu.quirofanoConcedido(quirofano);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
