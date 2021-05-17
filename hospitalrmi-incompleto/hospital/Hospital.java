@@ -113,33 +113,33 @@ class Coordinacion extends Thread {
                             case "SQ": //solicitud de quirofano
                                 // enviar el número de médico a GestorReservaEquipo
                                 if(!this.cola_solicitar_q.add(tmp)){ //si devuelve false no inserto en la cosa
-                                    System.err.println("Error insertar cola SF: " + tmp);
+                                    System.err.println("Error: insertar cola SF: " + tmp);
                                 }
                                 break;
                             case "SE": //solicitud de equipo de enfermería
                                 // enviar el número de médico a GestorReservaEquipo
                                 if(!this.cola_solicitar_e.add(tmp)){//si devuelve false no inserto en la cosa
-                                    System.err.println("Error insertar cola SE: " + tmp);
+                                    System.err.println("Error: insertar cola SE: " + tmp);
                                 }
                                 break;
                             case "LQ": //solicitud de equipo de enfermería
                                 // enviar el número de médico a GestorReservaEquipo
                                 if(!this.cola_liberar_q.add(tmp)){//si devuelve false no inserto en la cosa
-                                    System.err.println("Error insertar cola LQ: " + tmp);
+                                    System.err.println("Error: insertar cola LQ: " + tmp);
                                 }
                                 break;
                             case "LE": //solicitud de equipo de enfermería
                                 // enviar el número del equipo a GestorReservaEquipo
                                 if(!this.cola_liberar_e.add(tmp)){//si devuelve false no inserto en la cosa
-                                    System.err.println("Error insertar cola LQ: " + tmp);
+                                    System.err.println("Error: insertar cola LQ: " + tmp);
                                 }
                                 break;
                             default:
-                                System.err.println("Error en peticion Hospital \n(tipo de mensaje erroneo) "+ solicitud);
+                                System.err.println("Error: en peticion Hospital \n(tipo de mensaje erroneo)\n Se ignora "+ solicitud);
                                 System.exit(1);
                         }
                     }else{
-                        System.err.println("Error peticion hospital \n(formato número erroneo) "+ solicitud);
+                        System.err.println("Error: peticion hospital \n(formato número erroneo) "+ solicitud);
                     }
                     
 

@@ -6,3 +6,4 @@ fi
 
  ./lanzar_medico $1 $2 &
 #echo "Se lanza médico con $1 y $2"
+ 
