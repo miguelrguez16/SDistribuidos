@@ -179,15 +179,14 @@ class GestorReservaQuirofano extends Thread {
                 // Obtener quirofano libre de EstadoRecursos. Esta llamada es bloqueante
                 // y no se prosigue hasta que haya quirofano libre.
                 // A RELLENAR
-                int quirofano = estado_quirofanos.buscar_recurso("");
+                int quirofano = estado_quirofanos.buscar_recurso("RESERVAR");
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
                 String name = "Medico_" + idMedico;
                 MedicoImpl medicu = (MedicoImpl) Naming.lookup(name);
                 // y luego se invoca su método quirofanoConcedido()
                 
-                try {
-                    // A RELLENAR
+                try {// A RELLENAR
                     medicu.quirofanoConcedido(quirofano);
                 } catch (RemoteException e) {
                     e.printStackTrace();
@@ -219,16 +218,21 @@ class GestorReservaEquipo extends Thread {
             while (true) {  // Bucle infinito
                 // Esperar solicitud del Coordinador en la cola bloqueante
                 // A RELLENAR
-
+                int idMedico = null;
+                while(idMedico==null){
+                    idMedico = cola.take();
+                }
                 // Obtener equipo libre de EstadoRecursos. Esta llamada es bloqueante
                 // y no se prosigue hasta que haya un equipo libre.
                 // A RELLENAR
-
+                int equipo = estado_equipos.buscar_recurso("RESERVAR");
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
-                // y luego se invoca su método quirofanoConcedido()                
+                String name = "Medico_" + idMedico;
+                MedicoImpl medicu = (MedicoImpl) Naming.lookup(name);
                 try {
                     // A RELLENAR
+                    medicu.equipoConcedido(equipo);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
