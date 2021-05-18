@@ -103,14 +103,14 @@ class Coordinacion extends Thread {
                     String mensaje[] = solicitud.split(" ");
                     //for(int i = 0; i < mensaje.length;i++){
                    //     System.out.println("Posicion: " + i + " " + mensaje[i] ); }
-                    Integer tmp = 0; //variable para alojar el id de medico, quirofano o equipo
+                    Integer tmp = -1; //variable para alojar el id de medico, quirofano o equipo
 		            try {
 			            tmp = Integer.parseInt(mensaje[1]);
 		            }catch (NumberFormatException e) {
 			            System.err.println("Error: Valor erroneo" + e.getMessage());
                         System.exit(1);
 		            }
-                    if (tmp!=0){ 
+                    if (tmp>=0){ 
                         switch (mensaje[0]){
                             case "SQ": //solicitud de quirofano
                                 // enviar el número de médico a GestorReservaEquipo
@@ -227,6 +227,7 @@ class GestorReservaEquipo extends Thread {
                 // y no se prosigue hasta que haya un equipo libre.
                 // A RELLENAR
                 Integer equipo = estado_equipos.buscar_recurso("RESERVAR EQUIPOS");
+
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
                 String name = "Medico_" + idMedico;
