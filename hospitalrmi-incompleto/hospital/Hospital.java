@@ -101,36 +101,36 @@ class Coordinacion extends Thread {
                     // A RELLENAR
                     //dividimos el mensaje
                     String mensaje[] = solicitud.split(" ");
-                    int tmp = -1; //variable para alojar el id de medico, quirofano o equipo
+                    Integer tmp = 0; //variable para alojar el id de medico, quirofano o equipo
 		            try {
 			            tmp = Integer.parseInt(mensaje[0]);
 		            }catch (NumberFormatException e) {
 			            System.err.println(e.getMessage());
                         System.exit(1);
 		            }
-                    if (tmp!=-1){ 
+                    if (tmp!=0){ 
                         switch (mensaje[0]){
                             case "SQ": //solicitud de quirofano
                                 // enviar el número de médico a GestorReservaEquipo
-                                if(!this.cola_solicitar_q.add(tmp)){ //si devuelve false no inserto en la cosa
+                                if(!cola_solicitar_q.add(tmp)){ //si devuelve false no inserto en la cosa
                                     System.err.println("Error: insertar cola SF: " + tmp);
                                 }
                                 break;
                             case "SE": //solicitud de equipo de enfermería
                                 // enviar el número de médico a GestorReservaEquipo
-                                if(!this.cola_solicitar_e.add(tmp)){//si devuelve false no inserto en la cosa
+                                if(!cola_solicitar_e.add(tmp)){//si devuelve false no inserto en la cosa
                                     System.err.println("Error: insertar cola SE: " + tmp);
                                 }
                                 break;
                             case "LQ": //solicitud de equipo de enfermería
                                 // enviar el número de médico a GestorReservaEquipo
-                                if(!this.cola_liberar_q.add(tmp)){//si devuelve false no inserto en la cosa
+                                if(!cola_liberar_q.add(tmp)){//si devuelve false no inserto en la cosa
                                     System.err.println("Error: insertar cola LQ: " + tmp);
                                 }
                                 break;
                             case "LE": //solicitud de equipo de enfermería
                                 // enviar el número del equipo a GestorReservaEquipo
-                                if(!this.cola_liberar_e.add(tmp)){//si devuelve false no inserto en la cosa
+                                if(!cola_liberar_e.add(tmp)){//si devuelve false no inserto en la cosa
                                     System.err.println("Error: insertar cola LQ: " + tmp);
                                 }
                                 break;
@@ -174,20 +174,18 @@ class GestorReservaQuirofano extends Thread {
             while (true) {  // Bucle infinito
                 // Esperar solicitud del Coordinador en la cola bloqueante
                 // A RELLENAR
-                int idMedico = null;
-                while(idMedico==null){
-                    idMedico = cola.take();
-                }
+                Integer idMedico = cola.take();
                 // Obtener quirofano libre de EstadoRecursos. Esta llamada es bloqueante
                 // y no se prosigue hasta que haya quirofano libre.
                 // A RELLENAR
-                int quirofano = estado_quirofanos.buscar_recurso("RESERVAR QUIROFANOS");
+                Integer quirofano = estado_quirofanos.buscar_recurso("RESERVAR QUIROFANOS");
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
                 String name = "Medico_" + idMedico;
                 MedicoImpl medicu = (MedicoImpl) Naming.lookup(name);
                 // y luego se invoca su método quirofanoConcedido()
-                
+                //MedicoImpl medicu = new MedicoImpl();
+                //Naming.rebind(name,medicu);
                 try {// A RELLENAR
                     medicu.quirofanoConcedido(quirofano);
                 } catch (RemoteException e) {
@@ -220,14 +218,13 @@ class GestorReservaEquipo extends Thread {
             while (true) {  // Bucle infinito
                 // Esperar solicitud del Coordinador en la cola bloqueante
                 // A RELLENAR
-                int idMedico = null;
-                while(idMedico==null){
-                    idMedico = cola.take();
-                }
+                Integer idMedico = 0;
+                idMedico = cola.take();
+
                 // Obtener equipo libre de EstadoRecursos. Esta llamada es bloqueante
                 // y no se prosigue hasta que haya un equipo libre.
                 // A RELLENAR
-                int equipo = estado_equipos.buscar_recurso("RESERVAR EQUIPOS");
+                Integer equipo = estado_equipos.buscar_recurso("RESERVAR EQUIPOS");
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
                 String name = "Medico_" + idMedico;
@@ -318,10 +315,15 @@ public class Hospital {
         // y max_pistas) emitiendo un error si falta alguno no si no son de tipo numérico
         // A RELLENAR
 
-        if(argv==3){
-            max_quirofanos = argv[0];
-            max_equipos = argv[1];
-            max_medicos = argv[2];
+        if(argv.length==3){
+            try {
+                max_quirofanos = Integer.parseInt(argv[0]);
+                max_equipos = Integer.parseInt(argv[1]);
+                max_medicos = Integer.parseInt(argv[2]);
+            }catch(NumberFormatException e){
+                System.out.println("Error: formato de los argumentos incorrecto\n Deben ser numéricos");
+                System.exit(1);
+            } 
         }else{
             System.out.println("Error: Número de argumentos\nUso: hospital <max_quirofanos> <max_equipos> <max_medicos>");
             System.exit(1);
