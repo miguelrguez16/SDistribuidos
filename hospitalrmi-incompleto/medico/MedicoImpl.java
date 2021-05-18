@@ -40,7 +40,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         
         // A RELLENAR
         if(!cola.add(quirofanu)){
-            System.out.println()
+            System.out.println("Error: quirofanoConcedido RMI");
         }
     }
 
@@ -51,7 +51,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
 
         // A RELLENAR
         if(!cola.add(equipu)){
-            System.out.println()
+            System.out.println("Error: equipoConcedido RMI");
         }
     }
 
@@ -61,7 +61,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         // y retorna su valor
 
         // A RELLENAR
-        return cola.take()
+        return cola.take();
     }
 
     public int getEquipo() throws InterruptedException {
@@ -70,7 +70,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         // y retorna su valor
 
         // A RELLENAR
-        return cola.take()
+        return cola.take();
 
     }
 }
