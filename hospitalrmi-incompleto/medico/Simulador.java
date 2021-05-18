@@ -27,23 +27,30 @@ public class Simulador {
       System.exit(1);
     }
     else{
-        id = argv[0];
-        num_operaciones = argv[1];
+        try {
+          id = Integer.parseInt(argv[0]);
+          num_pacientes = Integer.parseInt(argv[1]);
+        }catch(NumberFormatException e){
+          System.out.println("Error: formato de los argumentos incorrecto\n Deben ser numéricos");
+          System.exit(1);
+        }
+        
     }
     // =================================================
     // Instanciar SecurityManager necesario para RMI
     if (System.getSecurityManager() == null) {
       System.setSecurityManager(new SecurityManager());
     }
-    String nome = "Medico_" + id_medico;
+    String nome = "Medico_" + id;
     // =================================================
     // Parte principal, toda dentro de un try para capturar cualquier excepción
     try {
       // Arrancar el servidor RMI MedicoImpl y registrarlo en rmiregistry
       // dandole como nombre "Medico_id", según su id
       // A RELLENAR
-      MedicoImpl medicu = new MedicoImpl();
-      Naming.rebind(nome);
+      MedicoImpl medicu = (MedicoImpl) Naming.lookup(nome);
+      
+      //medicu.Naming.rebind(nome);
       // Conectar con Rabbit para poder enviar peticiones a la cola
       // A RELLENAR
       ConnectionFactory factory = new ConnectionFactory();
@@ -53,7 +60,7 @@ public class Simulador {
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
 
       // Realizar la simulación
-      simular_operaciones(num_pacientes, channel, id, medico);
+      simular_operaciones(num_pacientes, channel, id, medicu);
 
       // Terminar
       System.out.println("Medico " + id + " finalizó sus intervenciones.");
@@ -98,9 +105,9 @@ public class Simulador {
 
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       String mensaxe = "SQ " + id;     
-      channel.basicPublish("", QUEUE_NAME, null, mensaxe.getBytes());
+      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes());
       //depuracion
       System.out.println(" [x] Sent '" + mensaxe + "'");
 
@@ -113,9 +120,9 @@ public class Simulador {
 
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "SE " + id;     
-      channel.basicPublish("", QUEUE_NAME, null, mensaxe.getBytes());
+      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes());
       System.out.println(" [x] Sent '" + mensaxe + "'");
 
       // Esperar por el quirofano concedido
@@ -131,9 +138,9 @@ public class Simulador {
       // Notificar liberación del quirofano
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "LQ " + quirofano;     
-      channel.basicPublish("", QUEUE_NAME, null, mensaxe.getBytes());
+      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes());
       System.out.println(" [x] Sent '" + mensaxe + "'");
       // No hay que esperar ninguna notificación tras liberar
 
@@ -142,9 +149,9 @@ public class Simulador {
       // Notificar liberación del equipo
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "LE " + equipo;     
-      channel.basicPublish("", QUEUE_NAME, null, mensaxe.getBytes());
+      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes());
       System.out.println(" [x] Sent '" + mensaxe + "'");
       // No hay que esperar ninguna notificación tras liberar
     } // Volver al bucle a simular otra operacion

@@ -181,7 +181,7 @@ class GestorReservaQuirofano extends Thread {
                 // Obtener quirofano libre de EstadoRecursos. Esta llamada es bloqueante
                 // y no se prosigue hasta que haya quirofano libre.
                 // A RELLENAR
-                int quirofano = estado_quirofanos.buscar_recurso("RESERVAR");
+                int quirofano = estado_quirofanos.buscar_recurso("RESERVAR QUIROFANOS");
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
                 String name = "Medico_" + idMedico;
@@ -227,7 +227,7 @@ class GestorReservaEquipo extends Thread {
                 // Obtener equipo libre de EstadoRecursos. Esta llamada es bloqueante
                 // y no se prosigue hasta que haya un equipo libre.
                 // A RELLENAR
-                int equipo = estado_equipos.buscar_recurso("RESERVAR");
+                int equipo = estado_equipos.buscar_recurso("RESERVAR EQUIPOS");
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
                 String name = "Medico_" + idMedico;
