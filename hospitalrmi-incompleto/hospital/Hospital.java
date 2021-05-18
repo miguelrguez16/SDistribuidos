@@ -137,8 +137,8 @@ class Coordinacion extends Thread {
                                 }
                                 break;
                             default:
-                                System.err.println("Error: en peticion Hospital \n(tipo de mensaje erroneo)\n Se ignora "+ solicitud);
-                                System.exit(1);
+                                System.err.println("WARNING: en peticion Hospital \n(tipo de mensaje erroneo)\n Se ignora "+ solicitud);
+                                //System.exit(1);
                         }
                     }else{
                         System.err.println("Error: peticion hospital \n(formato número erroneo) "+ solicitud);
