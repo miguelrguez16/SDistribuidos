@@ -1,9 +1,9 @@
 # A RELLENAR
 if [ "$#" -ne 2 ]; then
-    echo "Debe especificarse el id del medicos y el número de pacientes del médico"
+    echo "Debe especificarse el id del medico y el número de pacientes del médico"
     exit
 fi
 
- ./lanzar_medico $1 $2 &
-#echo "Se lanza médico con $1 y $2"
- 
+
+echo "Se lanza médico con $1 y $2"
+java -cp clases:clases/rabbitmq-client.jar -Djava.security.policy=policy medico.Simulador $1 $2.
