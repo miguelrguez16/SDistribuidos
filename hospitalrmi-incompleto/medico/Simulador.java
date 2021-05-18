@@ -58,7 +58,7 @@ public class Simulador {
       Connection connection = factory.newConnection();
       Channel channel = connection.createChannel();
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
-
+      System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
       // Realizar la simulación
       simular_operaciones(num_pacientes, channel, id, medicu);
 
