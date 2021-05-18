@@ -6,4 +6,4 @@ fi
 
 
 echo "Se lanza médico con $1 y $2"
-java -cp clases:clases/rabbitmq-client.jar -Djava.security.policy=policy medico.Simulador $1 $2.
+java -cp clases:clases/rabbitmq-client.jar -Djava.security.policy=policy medico.Simulador $1 $2

@@ -28,8 +28,8 @@ public class Simulador {
     }
     else{
         try {
-          id = Integer.parseInt(argv[0]);
-          num_pacientes = Integer.parseInt(argv[1]);
+          id = Integer.parseInt(argv[1]);
+          num_pacientes = Integer.parseInt(argv[2]);
         }catch(NumberFormatException e){
           System.out.println("Error: formato de los argumentos incorrecto\n Deben ser numéricos");
           System.exit(1);
@@ -107,7 +107,7 @@ public class Simulador {
       // A RELLENAR
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       String mensaxe = "SQ " + id;     
-      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes());
+      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
       //depuracion
       System.out.println(" [x] Sent '" + mensaxe + "'");
 
@@ -122,7 +122,7 @@ public class Simulador {
       // A RELLENAR
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "SE " + id;     
-      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes());
+      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
       System.out.println(" [x] Sent '" + mensaxe + "'");
 
       // Esperar por el quirofano concedido
@@ -140,7 +140,7 @@ public class Simulador {
       // A RELLENAR
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "LQ " + quirofano;     
-      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes());
+      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
       System.out.println(" [x] Sent '" + mensaxe + "'");
       // No hay que esperar ninguna notificación tras liberar
 
@@ -151,7 +151,7 @@ public class Simulador {
       // A RELLENAR
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "LE " + equipo;     
-      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes());
+      channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
       System.out.println(" [x] Sent '" + mensaxe + "'");
       // No hay que esperar ninguna notificación tras liberar
     } // Volver al bucle a simular otra operacion

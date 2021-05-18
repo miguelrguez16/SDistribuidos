@@ -317,9 +317,9 @@ public class Hospital {
 
         if(argv.length==3){
             try {
-                max_quirofanos = Integer.parseInt(argv[0]);
+                max_quirofanos = Integer.parseInt(argv[2]);
                 max_equipos = Integer.parseInt(argv[1]);
-                max_medicos = Integer.parseInt(argv[2]);
+                max_medicos = Integer.parseInt(argv[0]);
             }catch(NumberFormatException e){
                 System.out.println("Error: formato de los argumentos incorrecto\n Deben ser numéricos");
                 System.exit(1);
@@ -328,7 +328,9 @@ public class Hospital {
             System.out.println("Error: Número de argumentos\nUso: hospital <max_quirofanos> <max_equipos> <max_medicos>");
             System.exit(1);
         }
-
+        System.out.println("N.º max Medicos: " +max_medicos
+         + "\n N.º quirofanos: "+ max_quirofanos
+         + "\n N.º equipos: " + max_equipos);
         // Primero se crean las colas internas de sincronización entre hilos
         ArrayBlockingQueue<Integer> cola_solicitar_q =  new ArrayBlockingQueue<Integer>(max_medicos);
         ArrayBlockingQueue<Integer> cola_liberar_q = new ArrayBlockingQueue<Integer>(max_medicos);
