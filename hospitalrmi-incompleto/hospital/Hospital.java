@@ -182,7 +182,7 @@ class GestorReservaQuirofano extends Thread {
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
                 String name = "Medico_" + idMedico;
-                MedicoImpl medicu = (MedicoImpl) Naming.lookup(name);
+                MedicoInterface medicu = (MedicoInterface) Naming.lookup(name);
                 // y luego se invoca su método quirofanoConcedido()
                 //MedicoImpl medicu = new MedicoImpl();
                 //Naming.rebind(name,medicu);
@@ -228,7 +228,7 @@ class GestorReservaEquipo extends Thread {
                 // Notificarlo a través de RMI al médico adecuado
                 // Primero se obtiene la instancia remota (del Medico_id) que corresponda
                 String name = "Medico_" + idMedico;
-                MedicoImpl medicu = (MedicoImpl) Naming.lookup(name);
+                MedicoInterface medicu = (MedicoInterface) Naming.lookup(name);
                 try {
                     // A RELLENAR
                     medicu.equipoConcedido(equipo);
@@ -306,9 +306,9 @@ class GestorLiberacionEquipo extends Thread {
 // Clase principal que instancia los hilos anteriores y los arranca
 public class Hospital {   
     public static void main(String[] argv) throws Exception {
-        int max_quirofanos;    // Estas variables se leen de línea de comandos
-        int max_equipos;
-        int max_medicos;
+        int max_quirofanos = 0;    // Estas variables se leen de línea de comandos
+        int max_equipos = 0;
+        int max_medicos = 0;
 
         // Lectura de la línea de comandos
         // Se debe comprobar que se reciben tres parámetros (max_medicos, max_quirofanos 
