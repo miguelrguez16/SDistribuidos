@@ -56,7 +56,7 @@ public class Simulador {
       Connection connection = factory.newConnection();
       Channel channel = connection.createChannel();
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
-      System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+      //System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
       // Realizar la simulación
       simular_operaciones(num_pacientes, channel, id, medicu);
 
@@ -107,7 +107,7 @@ public class Simulador {
       String mensaxe = "SQ " + id;     
       channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
       //depuracion
-      System.out.println(" [x] Sent '" + mensaxe + "'");
+      //System.out.println(" [x] Sent '" + mensaxe + "'");
 
       // Esperar por el quirofano concedido
       quirofano = medico.getQuirofano();
@@ -121,7 +121,7 @@ public class Simulador {
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "SE " + id;     
       channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
-      System.out.println(" [x] Sent '" + mensaxe + "'");
+      //System.out.println(" [x] Sent '" + mensaxe + "'");
 
       // Esperar por el quirofano concedido
       equipo = medico.getEquipo();
@@ -139,7 +139,7 @@ public class Simulador {
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "LQ " + quirofano;     
       channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
-      System.out.println(" [x] Sent '" + mensaxe + "'");
+      //System.out.println(" [x] Sent '" + mensaxe + "'");
       // No hay que esperar ninguna notificación tras liberar
 
       System.out.println(String.format("Medico %d libera equipo %d tras operar (paciente %d)",  id, equipo, paciente));
@@ -150,7 +150,7 @@ public class Simulador {
       channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "LE " + equipo;     
       channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
-      System.out.println(" [x] Sent '" + mensaxe + "'");
+     // System.out.println(" [x] Sent '" + mensaxe + "'");
       // No hay que esperar ninguna notificación tras liberar
     } // Volver al bucle a simular otra operacion
 

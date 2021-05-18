@@ -101,11 +101,13 @@ class Coordinacion extends Thread {
                     // A RELLENAR
                     //dividimos el mensaje
                     String mensaje[] = solicitud.split(" ");
+                    //for(int i = 0; i < mensaje.length;i++){
+                   //     System.out.println("Posicion: " + i + " " + mensaje[i] ); }
                     Integer tmp = 0; //variable para alojar el id de medico, quirofano o equipo
 		            try {
-			            tmp = Integer.parseInt(mensaje[0]);
+			            tmp = Integer.parseInt(mensaje[1]);
 		            }catch (NumberFormatException e) {
-			            System.err.println(e.getMessage());
+			            System.err.println("Error: Valor erroneo" + e.getMessage());
                         System.exit(1);
 		            }
                     if (tmp!=0){ 
