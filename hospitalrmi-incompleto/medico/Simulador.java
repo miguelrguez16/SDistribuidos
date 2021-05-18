@@ -48,8 +48,8 @@ public class Simulador {
       // Arrancar el servidor RMI MedicoImpl y registrarlo en rmiregistry
       // dandole como nombre "Medico_id", según su id
       // A RELLENAR
-      MedicoImpl medicu = (MedicoImpl) Naming.lookup(nome);
-      
+      MedicoImpl medicu=new MedicoImpl();
+      Naming.rebind(nome,medicu);
       //medicu.Naming.rebind(nome);
       // Conectar con Rabbit para poder enviar peticiones a la cola
       // A RELLENAR
