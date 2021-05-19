@@ -55,8 +55,11 @@ void alterarToken(unsigned char *tok, estado_filosofo nuevoestado);
 void * comunicaciones(void);
 void * esperarConexion(void);
 // APARTADO 1
+//funcion para asegurar el cambio de estado del fisolofo
 void waitingTerminate(void);
-
+// APARTADO 2
+//funcion para convertir los valores del token y poder comprobarlos
+void binario(unsigned char tok, unsigned char *tokBinario );
 
 int main (int argc, char *argv[])
 {
@@ -159,9 +162,9 @@ void * filosofo(void){
 
 }
 
-   // APARTADO 1
+// APARTADO 1
+//sincronizarse con el estado de esperando a terminar
 void waitingTerminate(void){
-
   pthread_mutex_lock(&mestado);
   //bucle para asegurar el cambio de estado
   while (estado!=esperando_terminar){
@@ -170,7 +173,21 @@ void waitingTerminate(void){
   pthread_mutex_unlock(&mestado);
 
 }
-
+// APARTADO 2
+// Funcion para pasar a binario el token
+void binario(unsigned char tok, unsigned char * tokBinario){
+	unsigned char tokenaux;
+	int i = 0;
+	while(i < 8) {
+		unsigned char bit = 1;
+		tokenaux=tok;
+		tokenaux=tokenaux>>i;
+		bit&=tokenaux;
+		if(bit) tokBinario[(8-1)-i]='1';
+		else tokBinario[(8-1)-i]='0';
+		i++;
+    }
+}
  
 //sincronización con el cambio de estado a "comiendo"
 void esperarPalillos(void)
@@ -279,6 +296,14 @@ void * comunicaciones(void)
   struct sockaddr_in servidor,anterior;
   int anterior_len;
 
+  // APARTADO 2
+  //Se necesita una copia del token antes de modidicarse
+  //tambien el array con el numero binario 
+  unsigned char copyTok;
+  unsigned char tokenBits[8]; //1 byte -> 8 bits
+  
+  copyTok=0;
+
   //1-crear_socket_comunicacion_con_anterior y listen
   sockserver=socket(AF_INET,SOCK_STREAM,0);
   if (sockserver<0)
@@ -356,6 +381,9 @@ void * comunicaciones(void)
             "en el socket de conexion con el anterior nodo Ret=%d\n",
             idfilo,ret);
     }
+    // APARTADO 2
+    //Una vez recibido el token se guarda una copia
+    copyTok = token;
     pthread_mutex_lock(&mestado);
     if (estado==queriendo_comer)
     {   
@@ -386,6 +414,17 @@ void * comunicaciones(void)
        estado=terminar;
        pthread_cond_signal(&condestado);
     }
+    //APARTADO2
+	//Comprobamos si el token ha sido alterado, es decir, si al hacer un XOR
+	//con la copia que hicimos al principio y no sale 0 es que se ha modificado 
+	if(! ((token^copyTok)==0)){
+		//Llamamos a la funcion para que meta en el array los bits correspondientes
+		//al valor del token en bits
+		binario(token,tokenBits);
+		printf("Filosofo %d: nuevo token = %s\n",idfilo,tokenBits);
+	}
+
+
     pthread_mutex_unlock(&mestado);
     if (ret==1)    // si se leyó bien
     {
