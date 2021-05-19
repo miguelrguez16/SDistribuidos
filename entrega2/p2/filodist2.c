@@ -261,7 +261,7 @@ void alterarToken(unsigned char *tok, estado_filosofo nuevoestado)
      case terminar:
       *tok+=32;
       tokenaux=*tok;
-      printf("char %d\n",tokenaux);
+      printf("TOKEN: %d\n",tokenaux);
         break;
      default:;
    }
