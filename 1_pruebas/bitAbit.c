@@ -21,7 +21,5 @@ void main(){
     tokenaux = 1;
     tokenaux = tokenaux << 5;
     tok&=tokenaux;
-    printf("char %hhn\n",tok);
-
-
+    printf("char %d\n",tok);
 }
