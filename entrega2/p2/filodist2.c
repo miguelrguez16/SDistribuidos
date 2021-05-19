@@ -54,6 +54,9 @@ char palillosLibres(unsigned char token);
 void alterarToken(unsigned char *tok, estado_filosofo nuevoestado);
 void * comunicaciones(void);
 void * esperarConexion(void);
+// APARTADO 1
+void waitingTerminate(void);
+
 
 int main (int argc, char *argv[])
 {
@@ -146,9 +149,28 @@ void * filosofo(void){
    }
    fprintf(stderr,"Filosofo %d: Levantandose de la mesa\n",idfilo);
    //levantandose de la mesa
+   // APARTADO 1
    //return NULL;
 
+   cambiarEstado(esperando_terminar); //modificando el estado del filósofo
+   waitingTerminate();
+   fprintf(stderr,"Filosofo %d: Esperando terminar\n",idfilo);
+
+
 }
+
+   // APARTADO 1
+void waitingTerminate(void){
+
+  pthread_mutex_lock(&mestado);
+  //bucle para asegurar el cambio de estado
+  while (estado!=esperando_terminar){
+    pthread_cond_wait(&condestado,&mestado);
+  }
+  pthread_mutex_unlock(&mestado);
+
+}
+
  
 //sincronización con el cambio de estado a "comiendo"
 void esperarPalillos(void)
@@ -234,7 +256,10 @@ void alterarToken(unsigned char *tok, estado_filosofo nuevoestado)
        bit=bit<<pos;
        tokenaux|=bit;
        *tok=~tokenaux;
-       break; 
+       break;
+    // APARTADO 1
+     case esperando_terminar:
+        break;
      default:;
    }
 } 
