@@ -128,14 +128,11 @@ void inicializaciones(void)
    estado=no_sentado;
 }
 //hilo principal del filosofo
-void * filosofo(void)
-{
+void * filosofo(void){
    int numbocados=0;
 
-   while (numbocados<MAX_BOCADOS)
-   {
-     fprintf(stderr,"Filosofo %d: cambiando estado a "
-            "queriendo comer\n",idfilo);
+   while (numbocados<MAX_BOCADOS)   {
+     fprintf(stderr,"Filosofo %d: cambiando estado a queriendo comer\n",idfilo);
      cambiarEstado(queriendo_comer);
      esperarPalillos();
      //comiendo
@@ -149,8 +146,10 @@ void * filosofo(void)
    }
    fprintf(stderr,"Filosofo %d: Levantandose de la mesa\n",idfilo);
    //levantandose de la mesa
-}
+   //return NULL;
 
+}
+ 
 //sincronización con el cambio de estado a "comiendo"
 void esperarPalillos(void)
 {
