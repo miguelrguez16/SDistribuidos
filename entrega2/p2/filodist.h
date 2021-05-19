@@ -5,6 +5,6 @@ typedef enum {
      comiendo=2, dejando_comer=3,
      pensando=4,
      // APARTADO 1
-     esperando_terminar=5
+     esperando_terminar=5, terminar=6
 
 }estado_filosofo;

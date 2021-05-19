@@ -258,7 +258,10 @@ void alterarToken(unsigned char *tok, estado_filosofo nuevoestado)
        *tok=~tokenaux;
        break;
     // APARTADO 1
-     case esperando_terminar:
+     case terminar:
+      *tok+=32;
+      tokenaux=*tok;
+      printf("char %d\n",tokenaux);
         break;
      default:;
    }
@@ -372,6 +375,15 @@ void * comunicaciones(void)
     //    cambiar estado a pensando y señalar la condicion
        alterarToken(&token,pensando);
        estado=pensando;
+       pthread_cond_signal(&condestado);
+    // APARTADO 1
+    }else if (estado==esperando_terminar)
+    {    
+    //    alterar token y avanzar
+    //    cambiar estado de esperando_terminar a
+    //    terminar y señalar la condicion
+       alterarToken(&token,terminar);
+       estado=terminar;
        pthread_cond_signal(&condestado);
     }
     pthread_mutex_unlock(&mestado);
