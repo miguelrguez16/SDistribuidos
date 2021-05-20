@@ -39,7 +39,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         // Recibe el quirofano concedido y se limita a guardarlo en la cola interna
         
         // A RELLENAR
-        if(!cola.add(quirofanu)){
+        if(!cola.add(quirofanu)){//Combrobar que se añadio a la cola
             System.out.println("Error: quirofanoConcedido RMI");
         }
     }
@@ -50,7 +50,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         // Recibe el equipo concedido y se limita a guardarlo en la cola interna
 
         // A RELLENAR
-        if(!cola.add(equipu)){
+        if(!cola.add(equipu)){//Combrobar que se añadio a la cola
             System.out.println("Error: equipoConcedido RMI");
         }
     }
@@ -61,6 +61,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         // y retorna su valor
 
         // A RELLENAR
+        //tomar de la cola el id del quirofano
         return cola.take();
     }
 
@@ -70,6 +71,7 @@ public class MedicoImpl extends UnicastRemoteObject implements MedicoInterface {
         // y retorna su valor
 
         // A RELLENAR
+        //tomar de la cola el id del equipo
         return cola.take();
 
     }

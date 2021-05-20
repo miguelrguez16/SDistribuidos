@@ -101,8 +101,7 @@ class Coordinacion extends Thread {
                     // A RELLENAR
                     //dividimos el mensaje
                     String mensaje[] = solicitud.split(" ");
-                    //for(int i = 0; i < mensaje.length;i++){
-                   //     System.out.println("Posicion: " + i + " " + mensaje[i] ); }
+                    //for(String m: mensaje){} System.out.println(m); }
                     Integer tmp = -1; //variable para alojar el id de medico, quirofano o equipo
 		            try {
 			            tmp = Integer.parseInt(mensaje[1]);
@@ -114,25 +113,25 @@ class Coordinacion extends Thread {
                         switch (mensaje[0]){
                             case "SQ": //solicitud de quirofano
                                 // enviar el número de médico a GestorReservaEquipo
-                                if(!cola_solicitar_q.add(tmp)){ //si devuelve false no inserto en la cosa
+                                if(!cola_solicitar_q.add(tmp)){ //si devuelve false no inserto en la cola
                                     System.err.println("Error: insertar cola SF: " + tmp);
                                 }
                                 break;
                             case "SE": //solicitud de equipo de enfermería
                                 // enviar el número de médico a GestorReservaEquipo
-                                if(!cola_solicitar_e.add(tmp)){//si devuelve false no inserto en la cosa
+                                if(!cola_solicitar_e.add(tmp)){//si devuelve false no inserto en la cola
                                     System.err.println("Error: insertar cola SE: " + tmp);
                                 }
                                 break;
                             case "LQ": //solicitud de equipo de enfermería
                                 // enviar el número de médico a GestorReservaEquipo
-                                if(!cola_liberar_q.add(tmp)){//si devuelve false no inserto en la cosa
+                                if(!cola_liberar_q.add(tmp)){//si devuelve false no inserto en la cola
                                     System.err.println("Error: insertar cola LQ: " + tmp);
                                 }
                                 break;
                             case "LE": //solicitud de equipo de enfermería
                                 // enviar el número del equipo a GestorReservaEquipo
-                                if(!cola_liberar_e.add(tmp)){//si devuelve false no inserto en la cosa
+                                if(!cola_liberar_e.add(tmp)){//si devuelve false no inserto en la cola
                                     System.err.println("Error: insertar cola LQ: " + tmp);
                                 }
                                 break;
@@ -317,24 +316,29 @@ public class Hospital {
         // Se debe comprobar que se reciben tres parámetros (max_medicos, max_quirofanos 
         // y max_pistas) emitiendo un error si falta alguno no si no son de tipo numérico
         // A RELLENAR
-
+        //comprobar q son 3 los argumentos
         if(argv.length==3){
             try {
+                //conversion a enteros
                 max_quirofanos = Integer.parseInt(argv[2]);
                 max_equipos = Integer.parseInt(argv[1]);
                 max_medicos = Integer.parseInt(argv[0]);
             }catch(NumberFormatException e){
+                //en caso de no ser del formato correcto 
                 System.out.println("Error: formato de los argumentos incorrecto\n Deben ser numéricos");
                 System.exit(1);
             } 
         }else{
+            //Número de argumentos distintos de tres
             System.out.println("Error: Número de argumentos\nUso: hospital <max_quirofanos> <max_equipos> <max_medicos>");
             System.exit(1);
         }
-        System.out.println("N.º max Medicos: " +max_medicos
+        //Depuracion
+        System.out.println(" N.º max Medicos: " +max_medicos
          + "\n N.º quirofanos: "+ max_quirofanos
          + "\n N.º equipos: " + max_equipos);
         // Primero se crean las colas internas de sincronización entre hilos
+
         ArrayBlockingQueue<Integer> cola_solicitar_q =  new ArrayBlockingQueue<Integer>(max_medicos);
         ArrayBlockingQueue<Integer> cola_liberar_q = new ArrayBlockingQueue<Integer>(max_medicos);
         ArrayBlockingQueue<Integer> cola_solicitar_e =  new ArrayBlockingQueue<Integer>(max_medicos);

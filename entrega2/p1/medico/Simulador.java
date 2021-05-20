@@ -22,6 +22,7 @@ public class Simulador {
     // hay el número adecuado de ellos y que son números enteros
     // Los argumentos han de ser el id_medico y el número de pacientes a operar
     // A RELLENAR
+    //comprobar que son solo dos los argumentos
     if(argv.length==2){
             try {
                 id = Integer.parseInt(argv[0]);
@@ -39,6 +40,7 @@ public class Simulador {
     if (System.getSecurityManager() == null) {
       System.setSecurityManager(new SecurityManager());
     }
+    //identificador del medico
     String nome = "Medico_" + id;
     // =================================================
     // Parte principal, toda dentro de un try para capturar cualquier excepción
@@ -55,7 +57,7 @@ public class Simulador {
       factory.setHost("localhost");
       Connection connection = factory.newConnection();
       Channel channel = connection.createChannel();
-      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
+      //channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       //System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
       // Realizar la simulación
       simular_operaciones(num_pacientes, channel, id, medicu);
@@ -118,7 +120,7 @@ public class Simulador {
 
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
+      //channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "SE " + id;     
       channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
       //System.out.println(" [x] Sent '" + mensaxe + "'");
@@ -136,7 +138,7 @@ public class Simulador {
       // Notificar liberación del quirofano
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
+      //channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "LQ " + quirofano;     
       channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
       //System.out.println(" [x] Sent '" + mensaxe + "'");
@@ -147,7 +149,7 @@ public class Simulador {
       // Notificar liberación del equipo
       // Crear mensaje apropiado y ponerlo en la cola RabbitMQ
       // A RELLENAR
-      channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
+      //channel.queueDeclare(NOMBRE_COLA, false, false, false, null);
       mensaxe = "LE " + equipo;     
       channel.basicPublish("", NOMBRE_COLA, null, mensaxe.getBytes("UTF-8"));
      // System.out.println(" [x] Sent '" + mensaxe + "'");
