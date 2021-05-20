@@ -171,21 +171,7 @@ void waitingTerminate(void){
   pthread_mutex_unlock(&mestado);
 
 }
-// APARTADO 2
-// Funcion para pasar a binario el token
-void binario(unsigned char tok, unsigned char * tokBinario){
-	unsigned char tokenaux;
-	int i = 0;
-	while(i < 8) {
-		unsigned char bit = 1;
-		tokenaux=tok;
-		tokenaux=tokenaux>>i;
-		bit&=tokenaux;
-		if(bit) tokBinario[(8-1)-i]='1';
-		else tokBinario[(8-1)-i]='0';
-		i++;
-    }
-}
+
  
 //sincronización con el cambio de estado a "comiendo"
 void esperarPalillos(void)
@@ -419,9 +405,9 @@ void * comunicaciones(void)
        estado=terminar;
        pthread_cond_signal(&condestado);
     }
-  //APARTADO2
+  // APARTADO 2
   //Operacion XOR que comprueba si hubo algun cambio entre la copia
-  //y el token
+  //y el token a nivel binario
 	if(token^copyTok){ 
     unsigned char aux,bit;
     //vamos bit a bit
